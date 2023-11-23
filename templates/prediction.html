@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Prediction Result</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Receipt Prediction Result</h1>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Receipt Count</th>
+        </tr>
+        {% for result in predictions %}
+            <tr>
+                <td>{{ result.date }}</td>
+                <td>{{ result.receipt_count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
